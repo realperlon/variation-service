@@ -2,8 +2,6 @@ package org.spice3d.variation.tests;
 
 import static org.junit.Assert.*;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 import org.junit.Test;
 import org.spice3d.variation.dao.InMemoryVariationProvider;

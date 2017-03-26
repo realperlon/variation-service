@@ -19,6 +19,7 @@ public class TestSetup {
 	 */
 	 @Test
 	public void testInstallation(){
+		@SuppressWarnings("unused")
 		VariationProvider prov = InMemoryVariationProvider.getInstance();
 		
 		Properties props = AppProperties.getAppProperties();

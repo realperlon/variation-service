@@ -4,13 +4,19 @@ import java.io.Serializable;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import javax.xml.bind.annotation.*;
 
-
-/** A simple java bean that contains all data from a row of the variation file
+/** A  java bean that contains all data from a row of the variation file.
+ * Also can get serialized as json, or xml.
  * 
  * @author andreas
  *
  */
+@XmlRootElement(
+        name = "variation"
+)
+@XmlAccessorType(XmlAccessType.FIELD)
+
 public class VariationRecord implements Serializable
 {
 
@@ -228,6 +234,8 @@ public class VariationRecord implements Serializable
 		v.setSubmitter(spl[12]);
 		if ( spl.length>13)
 			v.setComment(spl[13]);
+		else
+			v.setComment("");
 
 		return v;
 	}

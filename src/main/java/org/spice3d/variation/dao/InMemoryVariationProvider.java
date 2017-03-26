@@ -91,7 +91,7 @@ public class InMemoryVariationProvider implements VariationProvider{
 
 		records.forEach(e->{
 
-			String geneName = e.getGene();
+			String geneName = e.getGene().toUpperCase();
 
 			List<VariationRecord> knownRecords = cache.get(geneName);
 			if ( cache.get(geneName) == null){
@@ -126,13 +126,25 @@ public class InMemoryVariationProvider implements VariationProvider{
 		return instance;
 	}
 
+	
+	/** Suggests possible gene names for the provided user input.
+	 * All Gene names are stored as all-upper case to avoid possible confusion around
+	 * case-sensitivity.
+	 * 
+	 * @param partialGeneName
+	 * @return
+	 */
 	public List<String> suggestGeneNames(String partialGeneName) {
+		
+		
+		final String upperCaseName = partialGeneName.toUpperCase();
+				
 		Set<String> knownGenes = cache.keySet();
 
 		List<String> suggestions = Collections.synchronizedList(new ArrayList<String>());
 
 		knownGenes.parallelStream().forEach(e->{
-			if ( e.startsWith(partialGeneName)){
+			if ( e.startsWith(upperCaseName)){
 				if ( ! suggestions.contains(e))
 					suggestions.add(e);
 			}
