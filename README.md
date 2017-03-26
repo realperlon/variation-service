@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/realperlon/variation-service.svg?branch=master)](https://travis-ci.org/realperlon/variation-service) 
+
 # variation-service
 The RESTful backend of the variation example
 
