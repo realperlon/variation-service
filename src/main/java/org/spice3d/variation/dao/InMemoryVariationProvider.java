@@ -89,13 +89,13 @@ public class InMemoryVariationProvider implements VariationProvider{
 
 		List<VariationRecord> records = FlatFileParserFacade.parseTSVFile();
 
-		records.parallelStream().forEach(e->{
+		records.forEach(e->{
 
 			String geneName = e.getGene();
 
 			List<VariationRecord> knownRecords = cache.get(geneName);
 			if ( cache.get(geneName) == null){
-				knownRecords = Collections.synchronizedList(new ArrayList<VariationRecord>());
+				knownRecords = new ArrayList<VariationRecord>();
 				cache.put(geneName,knownRecords);				
 			}
 			knownRecords.add(e);
@@ -123,7 +123,6 @@ public class InMemoryVariationProvider implements VariationProvider{
 			initiating.set(false);
 		}
 
-		logger.info("getting instance");
 		return instance;
 	}
 

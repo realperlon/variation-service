@@ -1,6 +1,6 @@
 package org.spice3d.variation.tests;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -30,6 +30,14 @@ public class TestVariationProvider {
 		assertTrue(prov.getVariantsForGeneName("BRCA1").size()>8000);
 		
 		assertTrue(prov.getSupportedGeneNames().size() >8240);
+		
+		int count = 0;
+		for ( String geneName : prov.getSupportedGeneNames()){
+			count += prov.getVariantsForGeneName(geneName).size();
+			
+		}
+		
+		assertEquals(count,TestTSVFileParsing.TOTAL_NR_RECORDS);
 	}
 
 	

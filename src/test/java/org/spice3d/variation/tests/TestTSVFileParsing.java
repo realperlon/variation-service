@@ -7,13 +7,14 @@ import java.util.Scanner;
 
 import org.junit.Test;
 import org.spice3d.variation.dao.InMemoryVariationProvider;
-import org.spice3d.variation.dao.VariationProvider;
 import org.spice3d.variation.model.VariationRecord;
 import org.spice3d.variation.parsers.FlatFileParserFacade;
 
 
 public class TestTSVFileParsing {
 
+	
+	public static final int TOTAL_NR_RECORDS = 398890;
 	
 	@Test
 	public void testTSVLineParsing() {
@@ -40,7 +41,7 @@ public class TestTSVFileParsing {
 		
 		// this tests the parsing independetly of the InMemoryVariationProvider cache
 		// InMemoryVariationProvider gets tested elsewhere
-		assertEquals(398890,FlatFileParserFacade.parseTSVFile().size());
+		assertEquals(TOTAL_NR_RECORDS,FlatFileParserFacade.parseTSVFile().size());
 	
 	}
 
