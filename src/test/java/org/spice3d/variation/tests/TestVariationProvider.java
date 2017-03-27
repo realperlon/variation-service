@@ -30,12 +30,26 @@ public class TestVariationProvider {
 		assertTrue(prov.getSupportedGeneNames().size() >8240);
 		
 		int count = 0;
+		
+		String maxGene = "";
+		int maxVariants = 0;
+		
 		for ( String geneName : prov.getSupportedGeneNames()){
-			count += prov.getVariantsForGeneName(geneName).size();
+			int nrVariants = prov.getVariantsForGeneName(geneName).size();
+			if ( nrVariants > maxVariants){
+				maxGene = geneName;
+				maxVariants = nrVariants;
+			}
+			count += nrVariants;
 			
 		}
 		
 		assertEquals(count,TestTSVFileParsing.TOTAL_NR_RECORDS);
+		
+		assertTrue(maxGene.equals("BRCA2"));
+		
+		assertTrue(maxVariants > 12000);
+		
 	}
 
 	
