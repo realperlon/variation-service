@@ -33,16 +33,5 @@ public class TestTSVFileParsing {
 		
 	}
 	
-	@Test
-	public void testFullFile() throws Exception{
-		
-		//  makes sure we have the flat file installed locally
-		InMemoryVariationProvider.checkSetup();
-		
-		// this tests the parsing independetly of the InMemoryVariationProvider cache
-		// InMemoryVariationProvider gets tested elsewhere
-		assertEquals(TOTAL_NR_RECORDS,FlatFileParserFacade.parseTSVFile().size());
-	
-	}
 
 }
