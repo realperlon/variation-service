@@ -11,5 +11,5 @@ The RESTful backend service for the variation coding test
 4) Performance: For fast performance this uses java parallel streams wherever possible.
 
 # Possible next steps
-* Some genes have a lot of variation data. Offer an extension that allows to "slice" through the results
+* Some genes have a lot of variation data. (e.g. BRCA2 has more than 12k). Offer an extension that allows to "slice" through the results
 
