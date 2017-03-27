@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/realperlon/variation-service.svg?branch=master)](https://travis-ci.org/realperlon/variation-service) 
 
 # variation-service
-The RESTful backend service for the variation coding test. The REST endpoint comes with a Swagger based documentation. 
+The RESTful backend service for the variation coding test. The REST endpoint comes with a web based documentation that is created by Swagger (point browser to ```http://localhost:8080/variation-service/``` for accessing the documentation).
 
 # Comments
 
