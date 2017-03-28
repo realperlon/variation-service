@@ -180,6 +180,8 @@ public class VariationRecord implements Serializable
 		b.append("\t");
 		b.append(source);
 		b.append("\t");
+		// not supporting lastEvaluated
+		b.append("\t");
 		b.append(lastUpdated);
 		b.append("\t");
 		b.append(url);
