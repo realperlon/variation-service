@@ -73,7 +73,7 @@ public class AppHelper {
 		if(!StringUtils.isBlank(format) && format.equalsIgnoreCase("xml")){
 			mediaType = MediaType.APPLICATION_XML;						
 		}
-		log.info("returning results in format: " + mediaType);
+		log.debug("returning results in format: " + mediaType);
 		return mediaType;
 	}
 	

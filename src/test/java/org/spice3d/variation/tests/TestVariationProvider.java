@@ -6,6 +6,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import org.spice3d.variation.dao.InMemoryVariationProvider;
 import org.spice3d.variation.dao.VariationProvider;
+import org.spice3d.variation.model.VariationRecord;
 
 
 /** A test that makes sure the data access layer provides results as expected
@@ -36,6 +37,7 @@ public class TestVariationProvider {
 		
 		for ( String geneName : prov.getSupportedGeneNames()){
 			int nrVariants = prov.getVariantsForGeneName(geneName).size();
+			
 			if ( nrVariants > maxVariants){
 				maxGene = geneName;
 				maxVariants = nrVariants;

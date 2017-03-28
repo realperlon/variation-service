@@ -6,7 +6,7 @@
         <java-type name="VariationRecord">
             <xml-root-element name="variation"/>
                     
-            <xml-type prop-order="gene nucleotideChange proteinChange otherMappings alias transcripts region reportedClassification inferredClassification source lastEvaluated url submitter comment"/>
+            <xml-type prop-order="gene nucleotideChange proteinChange otherMappings alias transcripts region reportedClassification inferredClassification source lastUpdated url comment"/>
 
             <java-attributes >
 						

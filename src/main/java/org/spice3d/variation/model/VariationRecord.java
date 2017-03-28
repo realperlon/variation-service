@@ -13,8 +13,8 @@ import javax.xml.bind.annotation.*;
  *
  */
 @XmlRootElement(
-        name = "variation"
-)
+		name = "variation"
+		)
 @XmlAccessorType(XmlAccessType.FIELD)
 
 public class VariationRecord implements Serializable
@@ -36,9 +36,9 @@ public class VariationRecord implements Serializable
 	String reportedClassification;
 	String inferredClassification;
 	String source;
-	String lastEvaluated;
+	String lastUpdated;
 	String url;
-	String submitter;
+
 	String comment;
 
 	public String getGene() {
@@ -121,12 +121,13 @@ public class VariationRecord implements Serializable
 		this.source = source;
 	}
 
-	public String getLastEvaluated() {
-		return lastEvaluated;
+
+	public String getLastUpdated() {
+		return lastUpdated;
 	}
 
-	public void setLastEvaluated(String lastEvaluated) {
-		this.lastEvaluated = lastEvaluated;
+	public void setLastUpdated(String lastUpdated) {
+		this.lastUpdated = lastUpdated;
 	}
 
 	public String getUrl() {
@@ -135,14 +136,6 @@ public class VariationRecord implements Serializable
 
 	public void setUrl(String url) {
 		this.url = url;
-	}
-
-	public String getSubmitter() {
-		return submitter;
-	}
-
-	public void setSubmitter(String submitter) {
-		this.submitter = submitter;
 	}
 
 	public String getComment() {
@@ -160,8 +153,8 @@ public class VariationRecord implements Serializable
 		return "VariationRecord [gene=" + gene + ", nucleotideChange=" + nucleotideChange + ", proteinChange="
 				+ proteinChange + ", otherMappings=" + otherMappings + ", alias=" + alias + ", transcripts="
 				+ transcripts + ", region=" + region + ", reportedClassification=" + reportedClassification
-				+ ", inferredClassification=" + inferredClassification + ", source=" + source + ", lastEvaluated="
-				+ lastEvaluated + ", url=" + url + ", submitter=" + submitter + ", comment=" + comment + "]";
+			    + ", inferredClassification=" + inferredClassification + ", source=" + source + ", lastUpdated="
+			    + lastUpdated +", url=" + url + ", comment=" + comment + "]";
 	}
 
 	public String toTSV(){
@@ -187,15 +180,14 @@ public class VariationRecord implements Serializable
 		b.append("\t");
 		b.append(source);
 		b.append("\t");
-		b.append(lastEvaluated);
+		b.append(lastUpdated);
 		b.append("\t");
 		b.append(url);
 		b.append("\t");
-		b.append(submitter);
-		b.append("\t");
+		
 		if ( comment != null){
-			
-			b.append(comment);
+			if (! comment.equals(""))
+				b.append(comment);
 		}
 
 		return b.toString();
@@ -229,13 +221,13 @@ public class VariationRecord implements Serializable
 		v.setReportedClassification(spl[7]);
 		v.setInferredClassification(spl[8]);
 		v.setSource(spl[9]);
-		v.setLastEvaluated(spl[10]);
-		v.setUrl(spl[11]);
-		v.setSubmitter(spl[12]);
+		v.setLastUpdated(spl[11]);
+		v.setUrl(spl[12]);
 		if ( spl.length>13)
 			v.setComment(spl[13]);
 		else
 			v.setComment("");
+		
 
 		return v;
 	}

@@ -71,7 +71,7 @@ public class VariationServiceImpl implements VariationService {
 				.tag(etag);
 
 		long timeE = System.currentTimeMillis();
-		logger.info("time to build response: " + (timeE-timeS)+" ms."); 
+		logger.debug("time to build response: " + (timeE-timeS)+" ms."); 
 		return responseBuilder.build();
 	}
 
