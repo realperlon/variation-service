@@ -17,10 +17,10 @@ Each REST api is available as either a JSON or XML response. The default is JSON
 
 ## Possible next steps
 * Some genes have a lot of variation data. (e.g. BRCA2 has more than 12k). Offer an extension that allows to "slice" through the results
-* In a similar way the autosuggest-feature current responds with all matching gene names. They are never shown by the frontend, as such they could be limited to just a few suggestions. 
+* In a similar way the autosuggest-feature currently responds with all matching gene names. They are never shown by the frontend, as such they could be limited to just a few suggestions. 
 
 ## Technology stack
-* The REST api has been build using Jersey
+* The REST api has been built using Jersey
 * API documentation is provided using Swagger
 * Java classes are mapped to XML (and json) representations using JAXB (Java Architecture for XML Binding)
 
